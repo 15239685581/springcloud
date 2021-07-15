@@ -5,6 +5,8 @@ import entities.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
@@ -65,7 +67,10 @@ public class PaymentController
         return serverPort;
     }
 
-
-
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin()
+    {
+        return "hi ,I am paymentZipkin server fall back,welcome to sz, HaHa";
+    }
 
 }
